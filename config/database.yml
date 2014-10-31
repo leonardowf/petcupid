@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: petcupid_production
-  username: petcupid
+  username: root
   password: <%= ENV['PETCUPID_DATABASE_PASSWORD'] %>
