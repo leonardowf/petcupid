@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101162849) do
+ActiveRecord::Schema.define(version: 20141101172549) do
+
+  create_table "animals", force: true do |t|
+    t.string   "name"
+    t.string   "identifier"
+    t.integer  "sex"
+    t.integer  "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "shelter_id"
+  end
+
+  add_index "animals", ["shelter_id"], name: "index_animals_on_shelter_id", using: :btree
 
   create_table "shelters", force: true do |t|
     t.string   "name"

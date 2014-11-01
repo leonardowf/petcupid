@@ -27,12 +27,20 @@ gem 'spring',        group: :development
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
-
 gem 'capistrano-rvm', github: 'capistrano/rvm'
 
 gem 'devise'
 
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
+
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'byebug'
+  gem 'annotate'
+  gem 'awesome_print'
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
