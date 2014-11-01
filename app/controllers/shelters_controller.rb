@@ -15,6 +15,7 @@ class SheltersController < ApplicationController
   # GET /shelters/new
   def new
     @shelter = Shelter.new
+    @shelter.photos.build
   end
 
   # GET /shelters/1/edit
@@ -69,6 +70,6 @@ class SheltersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelter_params
-      params.require(:shelter).permit(:name)
+      params.require(:shelter).permit(:name, photos_attributes: [:file])
     end
 end

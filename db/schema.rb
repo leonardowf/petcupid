@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101172549) do
+ActiveRecord::Schema.define(version: 20141101183925) do
 
   create_table "animals", force: true do |t|
     t.string   "name"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(version: 20141101172549) do
   end
 
   add_index "animals", ["shelter_id"], name: "index_animals_on_shelter_id", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer  "imageable_id"
+    t.integer  "imageable_type"
+  end
 
   create_table "shelters", force: true do |t|
     t.string   "name"

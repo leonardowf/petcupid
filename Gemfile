@@ -30,8 +30,8 @@ gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rvm', github: 'capistrano/rvm'
 
 gem 'devise'
-
 gem 'twitter-bootstrap-rails'
+gem 'paperclip', '~> 4.2'
 
 group :development do
   gem 'binding_of_caller'

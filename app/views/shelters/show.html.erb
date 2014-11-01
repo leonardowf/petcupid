@@ -8,6 +8,10 @@
   <dd><%= @shelter.name %></dd>
 </dl>
 
+<% @shelter.photos.each do |photo| %>
+  <%= image_tag photo.file.try(:url) %>
+<% end %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               shelters_path, :class => 'btn'  %>
