@@ -32,6 +32,10 @@ gem 'capistrano-rails', '~> 1.1.1'
 
 gem 'capistrano-rvm', github: 'capistrano/rvm'
 
+gem 'devise'
+
+gem "twitter-bootstrap-rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
