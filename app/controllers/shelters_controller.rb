@@ -1,4 +1,5 @@
 class SheltersController < ApplicationController
+  load_and_authorize_resource
   before_action :set_shelter, only: [:show, :edit, :update, :destroy]
 
   # GET /shelters
@@ -25,7 +26,8 @@ class SheltersController < ApplicationController
   # POST /shelters
   # POST /shelters.json
   def create
-    @shelter = Shelter.new(shelter_params)
+    @shelter = current_user.shelters.build(shelter_params)
+
 
     respond_to do |format|
       if @shelter.save

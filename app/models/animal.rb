@@ -14,4 +14,5 @@
 
 class Animal < ActiveRecord::Base
   belongs_to :shelter
+  has_many :photos, as: :imageable
 end

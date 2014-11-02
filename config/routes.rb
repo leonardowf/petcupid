@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :animals
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :shelters do
     resources :animals
   end

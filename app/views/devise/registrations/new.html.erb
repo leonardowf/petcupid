@@ -1,5 +1,7 @@
 <h2>Sign up</h2>
 
+<% resource.build_shelter %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -12,7 +14,14 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+
+  <%= f.fields_for :shelter do |shelter_form| %>
+  <div><%= f.label "Nome do abrigo" %><br />
+    <%= shelter_form.text_field :name %>
+  <% end %>
+
   <div><%= f.submit "Sign up" %></div>
+  
 <% end %>
 
 <%= render "devise/shared/links" %>

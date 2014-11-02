@@ -1,10 +1,16 @@
 class AnimalsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
+  before_action :set_shelter
 
   # GET /animals
   # GET /animals.json
   def index
-    @animals = Animal.all
+    if (@shelter.present?)
+      @animals = @shelter.animals
+    else
+      @animals = Animal.all
+    end
   end
 
   # GET /animals/1
@@ -65,6 +71,12 @@ class AnimalsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_animal
       @animal = Animal.find(params[:id])
+    end
+
+    def set_shelter
+      if (params[:shelter_id].present?)
+        @shelter = Shelter.find(params[:shelter_id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
