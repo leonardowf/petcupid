@@ -16,11 +16,13 @@ class SheltersController < ApplicationController
   # GET /shelters/new
   def new
     @shelter = Shelter.new
-    @shelter.photos.build
+
+    build_dependencies
   end
 
   # GET /shelters/1/edit
   def edit
+    build_dependencies
   end
 
   # POST /shelters
@@ -28,12 +30,12 @@ class SheltersController < ApplicationController
   def create
     @shelter = current_user.shelters.build(shelter_params)
 
-
     respond_to do |format|
       if @shelter.save
         format.html { redirect_to @shelter, notice: 'Shelter was successfully created.' }
         format.json { render :show, status: :created, location: @shelter }
       else
+        build_dependencies
         format.html { render :new }
         format.json { render json: @shelter.errors, status: :unprocessable_entity }
       end
@@ -48,6 +50,7 @@ class SheltersController < ApplicationController
         format.html { redirect_to @shelter, notice: 'Shelter was successfully updated.' }
         format.json { render :show, status: :ok, location: @shelter }
       else
+        build_dependencies
         format.html { render :edit }
         format.json { render json: @shelter.errors, status: :unprocessable_entity }
       end
@@ -65,6 +68,10 @@ class SheltersController < ApplicationController
   end
 
   private
+    def build_dependencies
+      @shelter.photos.build unless @shelter.photos.any?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_shelter
       @shelter = Shelter.find(params[:id])

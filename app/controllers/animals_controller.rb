@@ -1,4 +1,7 @@
 class AnimalsController < ApplicationController
+  load_and_authorize_resource :shelter
+  load_and_authorize_resource :animal, :through => :shelter
+
   load_and_authorize_resource
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
   before_action :set_shelter
@@ -20,7 +23,7 @@ class AnimalsController < ApplicationController
 
   # GET /animals/new
   def new
-    @animal = Animal.new
+    @animal = @shelter.animals.build
   end
 
   # GET /animals/1/edit
@@ -30,7 +33,7 @@ class AnimalsController < ApplicationController
   # POST /animals
   # POST /animals.json
   def create
-    @animal = Animal.new(animal_params)
+    @animal = @shelter.animals.build(animal_params)
 
     respond_to do |format|
       if @animal.save
