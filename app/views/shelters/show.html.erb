@@ -35,7 +35,7 @@
   <tbody>
     <% @shelter.animals.each do |animal| %>
       <tr>
-        <td><%= link_to animal.id, animal_path(animal) %></td>
+        <td><%= link_to animal.id, shelter_animal_path(@shelter, animal) %></td>
         <td><%= animal.name %></td>
         <td><%= animal.identifier %></td>
         <td><%= animal.sex %></td>

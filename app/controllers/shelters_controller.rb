@@ -79,6 +79,6 @@ class SheltersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelter_params
-      params.require(:shelter).permit(:name, photos_attributes: [:file])
+      params.require(:shelter).permit(:name, photos_attributes: [:id, :file])
     end
 end
