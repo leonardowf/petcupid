@@ -6,7 +6,7 @@
 #  name       :string(255)
 #  identifier :string(255)
 #  sex        :integer
-#  type       :integer
+#  category   :integer
 #  created_at :datetime
 #  updated_at :datetime
 #  shelter_id :integer

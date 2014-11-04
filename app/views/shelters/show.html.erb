@@ -28,7 +28,7 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:identifier) %></th>
       <th><%= model_class.human_attribute_name(:sex) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:category) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -39,7 +39,7 @@
         <td><%= animal.name %></td>
         <td><%= animal.identifier %></td>
         <td><%= animal.sex %></td>
-        <td><%= animal.type %></td>
+        <td><%= animal.category %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_shelter_animal_path(@shelter, animal), :class => 'btn btn-mini' %>
