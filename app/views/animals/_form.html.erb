@@ -24,12 +24,6 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :shelter_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :shelter_id, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
     <%= f.label :animal_description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :animal_description, :class => 'text_field' %>
@@ -44,43 +38,49 @@
   <div class="control-group">
     <%= f.label :birthday, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :birthday, :class => 'text_field' %>
+      <%= f.date_field :birthday, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :neutered, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :neutered, :class => 'text_field' %>
+      <%= f.check_box :neutered, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :medical_issues, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :medical_issues, :class => 'text_field' %>
+      <%= f.check_box :medical_issues, :class => 'text_field' %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= f.label :medical_issues_description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :medical_issues_description, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :child_friendly, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :child_friendly, :class => 'text_field' %>
+      <%= f.check_box :child_friendly, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :dog_friendly, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :dog_friendly, :class => 'text_field' %>
+      <%= f.check_box :dog_friendly, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :cat_friendly, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :cat_friendly, :class => 'text_field' %>
+      <%= f.check_box :cat_friendly, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :litter_trained, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :litter_trained, :class => 'text_field' %>
+      <%= f.check_box :litter_trained, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">

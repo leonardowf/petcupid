@@ -5,6 +5,7 @@ class AddFieldsToAnimals < ActiveRecord::Migration
     add_column :animals, :birthday, :date
     add_column :animals, :neutered, :boolean
     add_column :animals, :medical_issues, :boolean
+    add_column :animals, :medical_issues_description, :text
     add_column :animals, :child_friendly, :boolean
     add_column :animals, :dog_friendly, :boolean
     add_column :animals, :cat_friendly, :boolean

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141105030506) do
     t.date     "birthday"
     t.boolean  "neutered"
     t.boolean  "medical_issues"
+    t.text     "medical_issues_description"
     t.boolean  "child_friendly"
     t.boolean  "dog_friendly"
     t.boolean  "cat_friendly"
