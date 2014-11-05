@@ -26,4 +26,9 @@
 class Animal < ActiveRecord::Base
   belongs_to :shelter
   has_many :photos, as: :imageable
+
+  enum sex: [ :female, :male ]
+  enum category: [ :dog, :cat ]
+  enum animal_size: [ :small, :medium, :big ]
+
 end

@@ -14,13 +14,13 @@
   <div class="control-group">
     <%= f.label :sex, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :sex, :class => 'text_field' %>
+      <%= f.select :sex, Animal.sexes.keys.to_a.map { |w| [w.humanize, w] } %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :category, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :category, :class => 'text_field' %>
+      <%= f.select :category, Animal.categories.keys.to_a.map { |w| [w.humanize, w] } %>
     </div>
   </div>
   <div class="control-group">
@@ -32,7 +32,7 @@
   <div class="control-group">
     <%= f.label :animal_size, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :animal_size, :class => 'text_field' %>
+      <%= f.select :animal_size, Animal.animal_sizes.keys.to_a.map { |w| [w.humanize, w] } %>
     </div>
   </div>
   <div class="control-group">
