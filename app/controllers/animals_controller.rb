@@ -2,7 +2,6 @@ class AnimalsController < ApplicationController
   load_and_authorize_resource :shelter
   load_and_authorize_resource :animal, :through => :shelter
 
-  load_and_authorize_resource
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
   before_action :set_shelter
 
@@ -84,6 +83,10 @@ class AnimalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def animal_params
-      params.require(:animal).permit(:name, :identifier, :sex, :category)
+      params.require(:animal).permit(:id, :name, :identifier, :sex, 
+              :category, :animal_description, :animal_size, :birthday, 
+              :neutered, :medical_issues, :medical_issues_description, 
+              :child_friendly, :dog_friendly, :cat_friendly, :litter_trained, 
+              :other_info)
     end
 end
