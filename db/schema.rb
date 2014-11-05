@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104002001) do
+ActiveRecord::Schema.define(version: 20141105030506) do
 
   create_table "animals", force: true do |t|
     t.string   "name"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20141104002001) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "shelter_id"
+    t.text     "animal_description"
+    t.integer  "animal_size"
+    t.date     "birthday"
+    t.boolean  "neutered"
+    t.boolean  "medical_issues"
+    t.boolean  "child_friendly"
+    t.boolean  "dog_friendly"
+    t.boolean  "cat_friendly"
+    t.boolean  "litter_trained"
+    t.text     "other_info"
   end
 
   add_index "animals", ["shelter_id"], name: "index_animals_on_shelter_id", using: :btree

@@ -1,4 +1,4 @@
-<%= form_for [@shelter, @animal], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @animal, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -21,6 +21,72 @@
     <%= f.label :category, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :category, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :shelter_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :shelter_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :animal_description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :animal_description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :animal_size, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :animal_size, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birthday, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :birthday, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :neutered, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :neutered, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :medical_issues, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :medical_issues, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :child_friendly, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :child_friendly, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dog_friendly, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dog_friendly, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cat_friendly, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cat_friendly, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :litter_trained, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :litter_trained, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :other_info, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :other_info, :class => 'text_field' %>
     </div>
   </div>
 

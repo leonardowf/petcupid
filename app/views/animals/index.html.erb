@@ -10,6 +10,17 @@
       <th><%= model_class.human_attribute_name(:identifier) %></th>
       <th><%= model_class.human_attribute_name(:sex) %></th>
       <th><%= model_class.human_attribute_name(:category) %></th>
+      <th><%= model_class.human_attribute_name(:shelter_id) %></th>
+      <th><%= model_class.human_attribute_name(:animal_description) %></th>
+      <th><%= model_class.human_attribute_name(:animal_size) %></th>
+      <th><%= model_class.human_attribute_name(:birthday) %></th>
+      <th><%= model_class.human_attribute_name(:neutered) %></th>
+      <th><%= model_class.human_attribute_name(:medical_issues) %></th>
+      <th><%= model_class.human_attribute_name(:child_friendly) %></th>
+      <th><%= model_class.human_attribute_name(:dog_friendly) %></th>
+      <th><%= model_class.human_attribute_name(:cat_friendly) %></th>
+      <th><%= model_class.human_attribute_name(:litter_trained) %></th>
+      <th><%= model_class.human_attribute_name(:other_info) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -22,6 +33,17 @@
         <td><%= animal.identifier %></td>
         <td><%= animal.sex %></td>
         <td><%= animal.category %></td>
+        <td><%= animal.shelter_id %></td>
+        <td><%= animal.animal_description %></td>
+        <td><%= animal.animal_size %></td>
+        <td><%= animal.birthday %></td>
+        <td><%= animal.neutered %></td>
+        <td><%= animal.medical_issues %></td>
+        <td><%= animal.child_friendly %></td>
+        <td><%= animal.dog_friendly %></td>
+        <td><%= animal.cat_friendly %></td>
+        <td><%= animal.litter_trained %></td>
+        <td><%= animal.other_info %></td>
         <td><%=l animal.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
