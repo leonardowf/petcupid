@@ -9,28 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body class="application">
+  <%= render "shared/navbar" %>
+
   <div class="container">
     <div class="row">
       <div class="col-xs-0 col-md-1"></div>
       <div class="col-xs-12 col-md-10">
-
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-
         <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
+          <div class="alert alert-success" role="alert"><%= notice %></div>
         <% end %>
         <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
+          <div class="alert alert-danger" role="alert"><%= alert %></div>
         <% end %>
         <%= yield %>
-
       </div>
       <div class="col-xs-0 col-md-1"></div>
     </div>
