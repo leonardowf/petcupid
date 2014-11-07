@@ -31,7 +31,6 @@ gem 'capistrano-rvm', github: 'capistrano/rvm'
 
 gem 'devise'
 gem 'cancancan'
-gem 'twitter-bootstrap-rails'
 gem 'paperclip', '~> 4.2'
 
 group :development do
@@ -41,7 +40,6 @@ group :development do
   gem 'annotate'
   gem 'awesome_print'
 end
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
