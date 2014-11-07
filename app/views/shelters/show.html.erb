@@ -4,11 +4,11 @@
         
     </div>
     <div class="col-xs-3">
-    <h3><small><%= link_to("Pedidos de adoção", shelter_path(@shelter)) %></small></h3>
+    <h3 class="text-center"><small><%= link_to("Pedidos de adoção", shelter_path(@shelter)) %></small></h3>
         
     </div>
     <div class="col-xs-4">
-        <h3><small><%= link_to("Mensagens", shelter_path(@shelter)) %></small></h3>
+        <h3 class="text-right"><small><%= link_to("Mensagens", shelter_path(@shelter)) %></small></h3>
     </div>
 </div>
 
@@ -25,15 +25,12 @@
 
 <br/>
 
-
 <% @animals.each_slice(2) do |slice| %>
     <div class="row">
         <% slice.each do |animal|  %>
             <%= render partial: "animal_cell", locals: {animal: animal, shelter: @shelter } %>
         <% end %>
     </div>
-    <br />
-    <br />
     <br />
 <% end %>
 
