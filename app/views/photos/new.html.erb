@@ -1,0 +1,4 @@
+<%= form_for [@resource, @photo] do |f| %>
+    <%= f.file_field :file %>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+<% end %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :animals
+  resources :animals do
+    resources :photos, only: [:index, :new, :create, :destroy]
+  end
 
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :shelters do

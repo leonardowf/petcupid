@@ -31,4 +31,11 @@ class Animal < ActiveRecord::Base
   enum category: [ :dog, :cat ]
   enum animal_size: [ :small, :medium, :big ]
 
+  def profile_photo
+    if self.photos.any?
+      return self.photos.first
+    end
+    return nil
+  end
+
 end
