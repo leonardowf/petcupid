@@ -1,18 +1,27 @@
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <% if animal.profile_photo.present? %>
-        <%= image_tag(animal.profile_photo.file.url) %>
-      <% else %>
-        <strong>nenhuma foto</strong>
-      <% end %>
-      <div class="caption">
-        <h3><%= animal.name %></h3>
-        <p><%= animal.animal_description %></p>
-        <p>
-          <%= link_to("Adicionar fotos", animal_photos_path(animal), class: "btn btn-primary") %>
-          <%= link_to("Editar perfil", edit_shelter_animal_path(shelter, animal), class: "btn btn-default") %>
-        </p>
-
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <% if animal.profile_photo.present? %>
+      <div class="image-link">
+        <a class="image-link" href="<%= animal.profile_photo.file.url %>">
+          <%= image_tag(animal.profile_photo.file.url(:medium)) %>
+        </a>
+        <% animal.photos.each_with_index do |photo, index| %>
+          <% if index != 0 %>
+            <%= link_to("", photo.file.url, class: "image-link") %>
+          <% end %>
+        <% end %>
       </div>
+    <% else %>
+      <strong>nenhuma foto</strong>
+    <% end %>
+    <div class="caption">
+      <h3><%= animal.name %></h3>
+      <p><%= animal.animal_description %></p>
+      <p>
+        <%= link_to("Adicionar fotos", new_animal_photo_path(animal), class: "btn btn-primary") %>
+        <%= link_to("Editar perfil", edit_shelter_animal_path(shelter, animal), class: "btn btn-default") %>
+      </p>
+
     </div>
   </div>
+</div>

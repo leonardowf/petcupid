@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require jquery.magnific-popup.min
 //= require_tree .
+
+$(document).ready(function() {
+  $('.image-link').each(function() {
+     $(this).magnificPopup({ 
+        delegate: 'a',
+        type:'image', 
+        gallery: {
+            enabled: true
+        }
+    });
+});
+});
