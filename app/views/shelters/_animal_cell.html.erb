@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-4">
   <div class="thumbnail">
     <% if animal.profile_photo.present? %>
       <div class="image-link">
@@ -15,7 +15,7 @@
       <strong>nenhuma foto</strong>
     <% end %>
     <div class="caption">
-      <h3><%= animal.name %></h3>
+      <h3><%= link_to(animal.name, shelter_animal_path(shelter, animal)) %></h3>
       <p><%= animal.animal_description %></p>
       <p>
         <%= link_to("Adicionar fotos", new_animal_photo_path(animal), class: "btn btn-primary") %>

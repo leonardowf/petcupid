@@ -25,6 +25,12 @@
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
-.navbar {
-    margin-bottom: 0;
+.img-container {
+  height: 120px;
+}
+
+.img-container  .img-responsive {
+    display: block;
+    width: auto;
+    max-height: 100%;
 }
