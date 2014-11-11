@@ -3,7 +3,7 @@
     <% if animal.profile_photo.present? %>
       <div class="image-link">
         <a class="image-link" href="<%= animal.profile_photo.file.url %>">
-          <%= image_tag(animal.profile_photo.file.url(:medium)) %>
+          <%= image_tag(animal.profile_photo.file.url(:medium), size: "200x200", class: "img-responsive") %>
         </a>
         <% animal.photos.each_with_index do |photo, index| %>
           <% if index != 0 %>

@@ -25,10 +25,10 @@
 
 <br/>
 
-<div class="row">
-    <% @animals.each do |animal|  %>
-        <%= render partial: "animal_cell", locals: {animal: animal, shelter: @shelter } %>
-    <% end %>
-</div>
-
-
+<% @animals.each_slice(3) do |slice|  %>
+    <div class="row">
+        <% slice.each do |animal| %>
+            <%= render partial: "animal_cell", locals: {animal: animal, shelter: @shelter } %>
+        <% end %>
+    </div>
+<% end %>
