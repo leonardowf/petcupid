@@ -38,4 +38,8 @@ class Animal < ActiveRecord::Base
     return nil
   end
 
+  def user_owner
+    self.shelter.user
+  end
+
 end

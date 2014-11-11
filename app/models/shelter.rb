@@ -16,4 +16,8 @@ class Shelter < ActiveRecord::Base
   has_many :photos, as: :imageable
   
   accepts_nested_attributes_for :photos
+
+  def user_owner
+    self.user
+  end
 end
