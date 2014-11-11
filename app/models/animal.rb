@@ -42,4 +42,10 @@ class Animal < ActiveRecord::Base
     self.shelter.user
   end
 
+  def self.sex_attributes_for_select
+    sexes.map do |sex, _|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.sexes.#{sex}"), sex]
+    end
+  end
+
 end

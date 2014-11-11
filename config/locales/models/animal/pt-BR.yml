@@ -1,0 +1,7 @@
+pt-BR:
+  activerecord:
+    attributes:
+      animal:
+        sexes:
+          female: Fêmea
+          male: Macho
