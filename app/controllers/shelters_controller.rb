@@ -30,42 +30,21 @@ class SheltersController < ApplicationController
   # POST /shelters.json
   def create
     @shelter = current_user.shelters.build(shelter_params)
-
-    respond_to do |format|
-      if @shelter.save
-        format.html { redirect_to @shelter, notice: 'Shelter was successfully created.' }
-        format.json { render :show, status: :created, location: @shelter }
-      else
-        build_dependencies
-        format.html { render :new }
-        format.json { render json: @shelter.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with(@shelter)
   end
 
   # PATCH/PUT /shelters/1
   # PATCH/PUT /shelters/1.json
   def update
-    respond_to do |format|
-      if @shelter.update(shelter_params)
-        format.html { redirect_to @shelter, notice: 'Shelter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @shelter }
-      else
-        build_dependencies
-        format.html { render :edit }
-        format.json { render json: @shelter.errors, status: :unprocessable_entity }
-      end
-    end
+    @shelter.update(shelter_params)
+    respond_with(@shelter)
   end
 
   # DELETE /shelters/1
   # DELETE /shelters/1.json
   def destroy
     @shelter.destroy
-    respond_to do |format|
-      format.html { redirect_to shelters_url, notice: 'Shelter was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with(@shelter)
   end
 
   private
