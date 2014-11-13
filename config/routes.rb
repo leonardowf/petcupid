@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :animals do
+  resources :animals, only: [:index] do
     resources :photos, only: [:index, :new, :create, :destroy]
   end
 
