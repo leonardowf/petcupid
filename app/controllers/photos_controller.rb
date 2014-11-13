@@ -26,40 +26,21 @@ load_and_authorize_resource :photo, :through => [:shelter, :animal]
   # POST /photos.json
   def create
     @photo = @resource.photos.build(photo_params)
-
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to [@resource, :photos], notice: 'photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with(@resource, @photo)
   end
 
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json
   def update
-    respond_to do |format|
-      if @photo.update(photo_params)
-        format.html { redirect_to @photo, notice: 'photo was successfully updated.' }
-        format.json { render :show, status: :ok, location: @photo }
-      else
-        format.html { render :edit }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
+    @photo.update(photo_params)
+    respond_with(@photo)
   end
 
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
     @photo.destroy
-    respond_to do |format|
-      format.html { redirect_to photos_url, notice: 'photo was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with(@photo)
   end
 
   private
