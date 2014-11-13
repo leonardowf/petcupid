@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
-load_resource :shelter
-load_resource :animal
-load_and_authorize_resource :photo, :through => [:shelter, :animal]
+  load_resource :shelter
+  load_resource :animal
+  load_and_authorize_resource :photo, :through => [:shelter, :animal]
 
   before_action :set_photo, only: [:show, :destroy]
   before_action :set_resource

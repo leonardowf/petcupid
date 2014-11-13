@@ -48,4 +48,16 @@ class Animal < ActiveRecord::Base
     end
   end
 
+  def self.category_attributes_for_select
+    categories.map do |category, _|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{category}"), category]
+    end
+  end
+
+  def self.animal_size_attributes_for_select
+    animal_sizes.map do |animal_size, _|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.animal_sizes.#{animal_size}"), animal_size]
+    end
+  end
+
 end

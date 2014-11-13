@@ -5,3 +5,10 @@ pt-BR:
         sexes:
           female: Fêmea
           male: Macho
+        categories:
+          dog: Cachorro
+          cat: Gato
+        animal_sizes:
+          small: Pequeno
+          medium: Médio
+          big: Grande
