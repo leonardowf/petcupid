@@ -42,22 +42,13 @@ class Animal < ActiveRecord::Base
     self.shelter.user
   end
 
-  def self.sex_attributes_for_select
-    sexes.map do |sex, _|
-      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.sexes.#{sex}"), sex]
+  def self.attributes_for_select(field_name)
+    pluralized_field_name = field_name.to_s.pluralize.to_sym
+    if self.respond_to?(pluralized_field_name)
+      enumerables = self.send(pluralized_field_name)
+      enumerables.map do |enumerable, _|
+        [I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_field_name}.#{enumerable}"), enumerable]
+      end
     end
   end
-
-  def self.category_attributes_for_select
-    categories.map do |category, _|
-      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{category}"), category]
-    end
-  end
-
-  def self.animal_size_attributes_for_select
-    animal_sizes.map do |animal_size, _|
-      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.animal_sizes.#{animal_size}"), animal_size]
-    end
-  end
-
 end

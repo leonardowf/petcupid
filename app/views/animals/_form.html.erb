@@ -14,13 +14,13 @@
   <div class="control-group">
     <%= f.label :sex, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :sex, options_for_select(Animal.sex_attributes_for_select) %>
+      <%= f.select :sex, options_for_select(Animal.attributes_for_select(:sex)) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :category, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :category, options_for_select(Animal.category_attributes_for_select) %>
+      <%= f.select :category, options_for_select(Animal.attributes_for_select(:category)) %>
     </div>
   </div>
   <div class="control-group">
@@ -32,7 +32,7 @@
   <div class="control-group">
     <%= f.label :animal_size, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :animal_size, options_for_select(Animal.animal_size_attributes_for_select) %>
+      <%= f.select :animal_size, options_for_select(Animal.attributes_for_select(:animal_size)) %>
     </div>
   </div>
   <div class="control-group">
