@@ -51,4 +51,10 @@ class Animal < ActiveRecord::Base
       end
     end
   end
+
+  def translated_field(field_name)
+    field_value = send(field_name)
+    pluralized_field_name = field_name.to_s.pluralize.to_sym
+    I18n.t("activerecord.attributes.#{self.class.model_name.i18n_key}.#{pluralized_field_name}.#{field_value}")
+  end
 end
