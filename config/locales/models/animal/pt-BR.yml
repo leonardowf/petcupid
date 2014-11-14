@@ -12,3 +12,18 @@ pt-BR:
           small: Pequeno
           medium: Médio
           big: Grande
+        name: Nome
+        identifier: Identificador
+        sex: Sexo
+        category: Categoria
+        animal_description: Descrição
+        animal_size: Tamanho
+        birthday: Data de Nascimento
+        neutered: Castrado
+        medical_issues: Problemas de Saúde
+        medical_issues_description: Descrição dos problemas de saúde
+        child_friendly: Amigável com crianças
+        dog_friendly: Amigável com cachorros
+        cat_friendly: Amigável com gatos
+        litter_trained: Faz cocô certinho
+        other_info: Outras informações

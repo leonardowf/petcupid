@@ -1,93 +1,65 @@
-<%= form_for [@shelter, @animal], :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+<%= form_for [@shelter, @animal], :html => { role: "form" } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'form-label' %>
+    <%= f.text_field :name, :class => 'text_field form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :identifier, :class => 'form-label' %>
+    <%= f.text_field :identifier, :class => 'text_field form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sex, :class => 'form-label' %>
+    <%= f.select :sex, options_for_select(Animal.attributes_for_select(:sex)), {}, { class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category, :class => 'form-label' %>
+    <%= f.select :category, options_for_select(Animal.attributes_for_select(:category)), {}, { class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :animal_description, :class => 'form-label' %>
+    <%= f.text_field :animal_description, :class => 'text_field form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :animal_size, :class => 'form-label' %>
+    <div class="forms">
+      <%= f.select :animal_size, options_for_select(Animal.attributes_for_select(:animal_size)), {}, { class: "form-control" } %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :identifier, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :identifier, :class => 'text_field' %>
-    </div>
+  <div class="form-group">
+    <%= f.label :birthday, :class => 'form-label' %>
+    <%= f.date_field :birthday, :class => 'text_field form-control' %>
   </div>
-  <div class="control-group">
-    <%= f.label :sex, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :sex, options_for_select(Animal.attributes_for_select(:sex)) %>
-    </div>
+  <div class="form-group">
+    <%= f.label :neutered, :class => 'form-label' %>
+    <%= f.check_box :neutered, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :category, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :category, options_for_select(Animal.attributes_for_select(:category)) %>
-    </div>
+  <div class="form-group">
+    <%= f.label :medical_issues, :class => 'form-label' %>
+    <%= f.check_box :medical_issues, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :animal_description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :animal_description, :class => 'text_field' %>
-    </div>
+    <div class="form-group">
+    <%= f.label :medical_issues_description, :class => 'form-label' %>
+    <%= f.text_field :medical_issues_description, :class => 'text_field form-control' %>
   </div>
-  <div class="control-group">
-    <%= f.label :animal_size, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :animal_size, options_for_select(Animal.attributes_for_select(:animal_size)) %>
-    </div>
+  <div class="form-group">
+    <%= f.label :child_friendly, :class => 'form-label' %>
+    <%= f.check_box :child_friendly, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :birthday, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_field :birthday, :class => 'text_field' %>
-    </div>
+  <div class="form-group">
+    <%= f.label :dog_friendly, :class => 'form-label' %>
+    <%= f.check_box :dog_friendly, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :neutered, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :neutered, :class => 'text_field' %>
-    </div>
+  <div class="form-group">
+    <%= f.label :cat_friendly, :class => 'form-label' %>
+    <%= f.check_box :cat_friendly, :class => 'text_field' %>
   </div>
-  <div class="control-group">
-    <%= f.label :medical_issues, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :medical_issues, :class => 'text_field' %>
-    </div>
+  <div class="form-group">
+    <%= f.label :litter_trained, :class => 'form-label' %>
+    <%= f.check_box :litter_trained, :class => 'text_field' %>
   </div>
-    <div class="control-group">
-    <%= f.label :medical_issues_description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :medical_issues_description, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :child_friendly, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :child_friendly, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :dog_friendly, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :dog_friendly, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :cat_friendly, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :cat_friendly, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :litter_trained, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :litter_trained, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :other_info, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :other_info, :class => 'text_field' %>
-    </div>
+  <div class="form-group">
+    <%= f.label :other_info, :class => 'form-label' %>
+    <%= f.text_field :other_info, :class => 'text_field form-control' %>
   </div>
 
   <div class="form-actions">
