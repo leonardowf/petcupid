@@ -16,6 +16,7 @@
     <% end %>
     <div class="caption">
       <h3><%= link_to(animal.name, shelter_animal_path(shelter, animal)) %></h3>
+      <p><%= animal.translated_field(:category) %>, <%= animal.translated_field(:sex) %></p>
       <p><%= animal.animal_description %></p>
       <p>
         <%= link_to("Adicionar fotos", new_animal_photo_path(animal), class: "btn btn-primary") %>

@@ -8,7 +8,7 @@ class Ability
     can [:update, :read], Shelter, user_id: user.id
 
     can [:manage], Animal, shelter: { user_id: user.id }
-    can :index, Animal
+    can [:index, :show], Animal
 
     can [:manage], Photo do |photo|
       resource = photo.parent
