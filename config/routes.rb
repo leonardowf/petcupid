@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :shelters do
-    resources :animals
+    resources :animals do 
+      get 'meet'
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

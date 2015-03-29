@@ -50,6 +50,21 @@ class AnimalsController < ApplicationController
     respond_with(@animal)
   end
 
+  # GET /shelters/:shelter_id/animals/:animal_id/meet
+  # GET /shelters/:shelter_id/animals/:animal_id/meet.json
+  def meet
+    # Envia pedido de que quer conhecer o animal. 
+    # Isto mandaria uma proposta para o dono do shelter.
+
+    # TODO: É preciso criar uma tabela associativa para saber quem já mandou proposta para o animal.
+    # Assim evitaria mandar proposta múltiplas vezes.
+    if params[:user_id]
+      # friendly_user = User.find(params[:user_id])
+      friendly_user = current_user
+      AnimalMailer.meet_up_proposal(@animal, friendly_user).deliver
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_animal
